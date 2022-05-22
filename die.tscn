@@ -1,0 +1,151 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://resources/fonts/times.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://resources/fonts/Troubleside.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://die.gd" type="Script" id=3]
+
+[sub_resource type="Animation" id=2]
+resource_name = "Новая анимация"
+length = 5.0
+tracks/0/type = "bezier"
+tracks/0/path = NodePath(".:custom_fonts/font:size")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"points": PoolRealArray( 69, -0.25, 0, 0.25, 0, 90, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 5 )
+}
+tracks/1/type = "bezier"
+tracks/1/path = NodePath(".:modulate:r")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = false
+tracks/1/keys = {
+"points": PoolRealArray( 1, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+tracks/2/type = "bezier"
+tracks/2/path = NodePath(".:modulate:g")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = false
+tracks/2/keys = {
+"points": PoolRealArray( 1, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+tracks/3/type = "bezier"
+tracks/3/path = NodePath(".:modulate:b")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = false
+tracks/3/keys = {
+"points": PoolRealArray( 1, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+tracks/4/type = "bezier"
+tracks/4/path = NodePath(".:modulate:a")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"points": PoolRealArray( 1, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+tracks/5/type = "bezier"
+tracks/5/path = NodePath(".:self_modulate:r")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"points": PoolRealArray( 1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 5 )
+}
+tracks/6/type = "bezier"
+tracks/6/path = NodePath(".:self_modulate:g")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"points": PoolRealArray( 1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 5 )
+}
+tracks/7/type = "bezier"
+tracks/7/path = NodePath(".:self_modulate:b")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"points": PoolRealArray( 1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 5 )
+}
+tracks/8/type = "bezier"
+tracks/8/path = NodePath(".:self_modulate:a")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 5 )
+}
+
+[sub_resource type="DynamicFont" id=1]
+size = 69
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 50
+font_data = ExtResource( 2 )
+
+[node name="Control" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 3 )
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_right = 1280.0
+margin_bottom = 720.0
+color = Color( 0, 0, 0, 1 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+root_node = NodePath("Label")
+autoplay = "Новая анимация"
+method_call_mode = 1
+"anims/Новая анимация" = SubResource( 2 )
+
+[node name="Label" type="Label" parent="AnimationPlayer"]
+self_modulate = Color( 1, 1, 1, 0 )
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -289.0
+margin_top = -66.5
+margin_right = 289.0
+margin_bottom = 66.5
+rect_pivot_offset = Vector2( 200, 50 )
+custom_colors/font_color = Color( 0.309804, 0, 0.00392157, 1 )
+custom_fonts/font = SubResource( 1 )
+text = "YOU DIED"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="."]
+margin_left = 15.0
+margin_top = 550.0
+margin_right = 1252.0
+margin_bottom = 685.0
+custom_fonts/font = SubResource( 3 )
+text = "PRESS R to RESTART       PRESS ESC to EXIT"

@@ -1,0 +1,146 @@
+[gd_scene load_steps=18 format=2]
+
+[ext_resource path="res://assets/RobotoBold24.tres" type="DynamicFont" id=1]
+[ext_resource path="res://AutomatonMode/Scripts/Interface/AlgorithmInterface.gd" type="Script" id=2]
+[ext_resource path="res://AutomatonMode/Scripts/Interface/StartAlgorithm.gd" type="Script" id=3]
+[ext_resource path="res://resources/images/MenuInterface/icons/plus pressed.png" type="Texture" id=4]
+[ext_resource path="res://resources/images/MenuInterface/icons/plus.png" type="Texture" id=5]
+[ext_resource path="res://AutomatonMode/Resources/Other/InputStyleBox.tres" type="StyleBox" id=6]
+[ext_resource path="res://resources/images/MenuInterface/icons/Button pressed.png" type="Texture" id=7]
+[ext_resource path="res://resources/images/MenuInterface/icons/Button.png" type="Texture" id=8]
+[ext_resource path="res://resources/fonts/a_gildiaexp.ttf" type="DynamicFontData" id=9]
+[ext_resource path="res://AutomatonMode/Resources/Scenes/Indexer.tscn" type="PackedScene" id=10]
+[ext_resource path="res://AutomatonMode/Resources/Scenes/VBoxContainer.gd" type="Script" id=11]
+[ext_resource path="res://AutomatonMode/Scripts/Interface/TranslatableLabel.gd" type="Script" id=12]
+[ext_resource path="res://AutomatonMode/Scripts/Interface/TranslatableButton.gd" type="Script" id=13]
+
+[sub_resource type="DynamicFont" id=4]
+size = 32
+font_data = ExtResource( 9 )
+
+[sub_resource type="StyleBoxTexture" id=1]
+texture = ExtResource( 8 )
+region_rect = Rect2( 0, 0, 100, 40 )
+
+[sub_resource type="StyleBoxTexture" id=2]
+texture = ExtResource( 7 )
+region_rect = Rect2( 0, 0, 100, 40 )
+
+[sub_resource type="StyleBoxTexture" id=3]
+texture = ExtResource( 8 )
+region_rect = Rect2( 0, 0, 100, 40 )
+
+[node name="AlgorithmInterface" type="Control"]
+anchor_right = 0.39
+anchor_bottom = 1.268
+margin_right = -0.200012
+margin_bottom = 0.039978
+input_pass_on_modal_close_click = false
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_left = 10.0
+margin_top = 10.0
+margin_right = 187.0
+margin_bottom = 50.0
+color = Color( 0.235294, 0.156863, 0.156863, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="ColorRect"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -82.5
+margin_top = -20.0
+margin_right = 82.5
+margin_bottom = 20.0
+custom_colors/font_color = Color( 0.937255, 0.917647, 0.862745, 1 )
+custom_fonts/font = ExtResource( 1 )
+text = "Начальное состояние"
+align = 1
+valign = 1
+script = ExtResource( 12 )
+
+[node name="LineEdit" type="LineEdit" parent="."]
+margin_left = 187.0
+margin_top = 10.0
+margin_right = 245.0
+margin_bottom = 50.0
+custom_styles/normal = ExtResource( 6 )
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
+margin_left = 16.0
+margin_top = 58.0
+margin_right = 305.0
+margin_bottom = 354.0
+scroll_horizontal_enabled = false
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer"]
+alignment = 2
+script = ExtResource( 11 )
+
+[node name="AddFragment" type="TextureButton" parent="."]
+margin_left = 251.885
+margin_top = 10.3679
+margin_right = 291.885
+margin_bottom = 50.3679
+texture_normal = ExtResource( 5 )
+texture_pressed = ExtResource( 4 )
+
+[node name="StartAlgorithm" type="Button" parent="."]
+margin_left = 12.0
+margin_top = 434.0
+margin_right = 296.0
+margin_bottom = 489.0
+custom_colors/font_color = Color( 0.341176, 0.117647, 0.117647, 1 )
+custom_colors/font_color_hover = Color( 0.341176, 0.117647, 0.117647, 1 )
+custom_colors/font_color_pressed = Color( 0.184314, 0.0392157, 0.0392157, 1 )
+custom_fonts/font = SubResource( 4 )
+custom_styles/hover = SubResource( 1 )
+custom_styles/pressed = SubResource( 2 )
+custom_styles/normal = SubResource( 3 )
+text = "Старт"
+script = ExtResource( 3 )
+
+[node name="LoadAlgorithm" type="Button" parent="."]
+margin_left = 12.0
+margin_top = 366.0
+margin_right = 296.0
+margin_bottom = 421.0
+custom_colors/font_color = Color( 0.341176, 0.117647, 0.117647, 1 )
+custom_colors/font_color_hover = Color( 0.341176, 0.117647, 0.117647, 1 )
+custom_colors/font_color_pressed = Color( 0.184314, 0.0392157, 0.0392157, 1 )
+custom_fonts/font = SubResource( 4 )
+custom_styles/hover = SubResource( 1 )
+custom_styles/pressed = SubResource( 2 )
+custom_styles/normal = SubResource( 3 )
+text = "Загрузить"
+script = ExtResource( 13 )
+
+[node name="Indexer" parent="." instance=ExtResource( 10 )]
+anchor_top = 0.003
+anchor_right = 0.0
+anchor_bottom = 0.5
+margin_left = 102.65
+margin_top = -51.932
+margin_right = 206.65
+margin_bottom = -453.693
+max_index = 0
+
+[connection signal="text_changed" from="LineEdit" to="." method="_on_LineEdit_text_entered"]
+[connection signal="text_entered" from="LineEdit" to="." method="_on_LineEdit_text_entered"]
+[connection signal="pressed" from="AddFragment" to="." method="_on_AddFragment_pressed"]
+[connection signal="pressed" from="StartAlgorithm" to="." method="_on_StartAlgorithm_pressed"]
+[connection signal="pressed" from="StartAlgorithm" to="StartAlgorithm" method="_on_StartAlgorithm_pressed"]
+[connection signal="pressed" from="LoadAlgorithm" to="." method="_on_LoadAlgorithm_pressed"]
+[connection signal="index_changed" from="Indexer" to="." method="_on_Indexer_index_changed"]

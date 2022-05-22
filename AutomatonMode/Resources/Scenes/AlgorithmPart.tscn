@@ -1,0 +1,180 @@
+[gd_scene load_steps=26 format=2]
+
+[ext_resource path="res://AutomatonMode/Resources/icons/Point.png" type="Texture" id=1]
+[ext_resource path="res://AutomatonMode/Resources/icons/AllWays.png" type="Texture" id=2]
+[ext_resource path="res://resources/images/MenuInterface/icons/minus.png" type="Texture" id=3]
+[ext_resource path="res://AutomatonMode/Resources/icons/Right.png" type="Texture" id=4]
+[ext_resource path="res://AutomatonMode/Resources/Scenes/PopupButton.gd" type="Script" id=5]
+[ext_resource path="res://AutomatonMode/Scripts/Interface/AlgorithmPart.gd" type="Script" id=6]
+[ext_resource path="res://AutomatonMode/Resources/icons/UpRight.png" type="Texture" id=7]
+[ext_resource path="res://AutomatonMode/Resources/icons/Left.png" type="Texture" id=8]
+[ext_resource path="res://AutomatonMode/Resources/icons/DownRight.png" type="Texture" id=9]
+[ext_resource path="res://AutomatonMode/Resources/icons/Up.png" type="Texture" id=10]
+[ext_resource path="res://AutomatonMode/Resources/icons/Down.png" type="Texture" id=11]
+[ext_resource path="res://AutomatonMode/Resources/icons/UpDownRight.png" type="Texture" id=12]
+[ext_resource path="res://AutomatonMode/Resources/icons/UpDownLeft.png" type="Texture" id=13]
+[ext_resource path="res://AutomatonMode/Resources/icons/UpRightLeft.png" type="Texture" id=14]
+[ext_resource path="res://AutomatonMode/Resources/icons/RightLeft.png" type="Texture" id=15]
+[ext_resource path="res://AutomatonMode/Resources/icons/DownLeft.png" type="Texture" id=16]
+[ext_resource path="res://AutomatonMode/Resources/icons/UpDown.png" type="Texture" id=17]
+[ext_resource path="res://AutomatonMode/Resources/icons/DownRightLeft.png" type="Texture" id=18]
+[ext_resource path="res://AutomatonMode/Resources/icons/UpLeft.png" type="Texture" id=19]
+[ext_resource path="res://AutomatonMode/Resources/Other/InputStyleBox.tres" type="StyleBox" id=20]
+[ext_resource path="res://AutomatonMode/Resources/icons/Delete_Pressed.png" type="Texture" id=21]
+[ext_resource path="res://AutomatonMode/Resources/icons/Delete.png" type="Texture" id=22]
+[ext_resource path="res://resources/images/MenuInterface/icons/not_see_normal.png" type="Texture" id=23]
+[ext_resource path="res://resources/images/MenuInterface/icons/not_matter_normal.png" type="Texture" id=24]
+[ext_resource path="res://resources/images/MenuInterface/icons/see_normal.png" type="Texture" id=25]
+
+[node name="Control" type="Control"]
+anchor_right = 0.206
+anchor_bottom = 0.133
+margin_right = 0.319977
+margin_bottom = 0.239998
+rect_min_size = Vector2( 264, 96 )
+input_pass_on_modal_close_click = false
+script = ExtResource( 6 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0.235294, 0.156863, 0.156863, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ConditionState" type="LineEdit" parent="ColorRect"]
+margin_left = 6.0
+margin_top = 5.0
+margin_right = 64.0
+margin_bottom = 44.0
+rect_pivot_offset = Vector2( 58.2764, 13.2731 )
+custom_styles/normal = ExtResource( 20 )
+align = 1
+
+[node name="SeeRadius" type="LineEdit" parent="ColorRect"]
+margin_left = 55.0
+margin_top = 49.0
+margin_right = 113.0
+margin_bottom = 88.0
+rect_pivot_offset = Vector2( 58.2764, 13.2731 )
+custom_styles/normal = ExtResource( 20 )
+align = 1
+
+[node name="ToState" type="LineEdit" parent="ColorRect"]
+margin_left = 158.0
+margin_top = 6.0
+margin_right = 216.0
+margin_bottom = 45.0
+custom_styles/normal = ExtResource( 20 )
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ConditionDirectionChoose" type="TextureButton" parent="ColorRect"]
+margin_left = 73.0
+margin_top = 5.0
+margin_right = 113.0
+margin_bottom = 45.0
+texture_normal = ExtResource( 3 )
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ConditionDirection" type="PopupMenu" parent="ColorRect/ConditionDirectionChoose"]
+margin_left = -9.0
+margin_top = -3.0
+margin_right = 35.0
+margin_bottom = 697.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_styles/panel = ExtResource( 20 )
+items = [ "", ExtResource( 1 ), 0, false, false, 0, 0, null, "", false, "", ExtResource( 2 ), 0, false, false, 1, 0, null, "", false, "", ExtResource( 4 ), 0, false, false, 2, 0, null, "", false, "", ExtResource( 11 ), 0, false, false, 3, 0, null, "", false, "", ExtResource( 8 ), 0, false, false, 4, 0, null, "", false, "", ExtResource( 10 ), 0, false, false, 5, 0, null, "", false, "", ExtResource( 7 ), 0, false, false, 6, 0, null, "", false, "", ExtResource( 9 ), 0, false, false, 7, 0, null, "", false, "", ExtResource( 16 ), 0, false, false, 8, 0, null, "", false, "", ExtResource( 19 ), 0, false, false, 9, 0, null, "", false, "", ExtResource( 15 ), 0, false, false, 10, 0, null, "", false, "", ExtResource( 17 ), 0, false, false, 11, 0, null, "", false, "", ExtResource( 12 ), 0, false, false, 12, 0, null, "", false, "", ExtResource( 13 ), 0, false, false, 13, 0, null, "", false, "", ExtResource( 14 ), 0, false, false, 14, 0, null, "", false, "", ExtResource( 18 ), 0, false, false, 15, 0, null, "", false ]
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SeeCondition" type="TextureButton" parent="ColorRect"]
+margin_left = 7.0614
+margin_top = 48.5568
+margin_right = 47.0614
+margin_bottom = 88.5568
+texture_normal = ExtResource( 3 )
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SeeCondition" type="PopupMenu" parent="ColorRect/SeeCondition"]
+margin_left = -9.0
+margin_top = -3.0
+margin_right = 35.0
+margin_bottom = 129.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_styles/panel = ExtResource( 20 )
+items = [ "", ExtResource( 25 ), 0, false, false, 0, 0, null, "", false, "", ExtResource( 23 ), 0, false, false, 1, 0, null, "", false, "", ExtResource( 24 ), 0, false, false, 2, 0, null, "", false ]
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ToDirectionChoose" type="TextureButton" parent="ColorRect"]
+margin_left = 221.0
+margin_top = 4.0
+margin_right = 261.0
+margin_bottom = 44.0
+texture_normal = ExtResource( 3 )
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ToDirection" type="PopupMenu" parent="ColorRect/ToDirectionChoose"]
+margin_left = -9.0
+margin_top = -3.0
+margin_right = 35.0
+margin_bottom = 213.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_styles/panel = ExtResource( 20 )
+items = [ "", ExtResource( 1 ), 0, false, false, 0, 0, null, "", false, "", ExtResource( 4 ), 0, false, false, 1, 0, null, "", false, "", ExtResource( 11 ), 0, false, false, 2, 0, null, "", false, "", ExtResource( 8 ), 0, false, false, 3, 0, null, "", false, "", ExtResource( 10 ), 0, false, false, 4, 0, null, "", false ]
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="ColorRect"]
+margin_left = 116.0
+margin_top = 19.0
+margin_right = 156.0
+margin_bottom = 33.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "=>"
+align = 1
+
+[node name="Delete" type="TextureButton" parent="."]
+margin_left = 229.0
+margin_top = 62.0
+margin_right = 260.0
+margin_bottom = 91.0
+texture_normal = ExtResource( 22 )
+texture_pressed = ExtResource( 21 )
+expand = true
+
+[connection signal="text_changed" from="ColorRect/ConditionState" to="." method="_on_ConditionState_text_entered"]
+[connection signal="text_entered" from="ColorRect/ConditionState" to="." method="_on_ConditionState_text_entered"]
+[connection signal="text_changed" from="ColorRect/SeeRadius" to="." method="_on_SeeRadius_text_entered"]
+[connection signal="text_entered" from="ColorRect/SeeRadius" to="." method="_on_SeeRadius_text_entered"]
+[connection signal="text_changed" from="ColorRect/ToState" to="." method="_on_ToState_text_entered"]
+[connection signal="text_entered" from="ColorRect/ToState" to="." method="_on_ToState_text_entered"]
+[connection signal="item_selected" from="ColorRect/ConditionDirectionChoose" to="." method="_on_ConditionDirectionChoose_item_selected"]
+[connection signal="pressed" from="ColorRect/ConditionDirectionChoose" to="ColorRect/ConditionDirectionChoose" method="_on_TextureButton_pressed"]
+[connection signal="item_selected" from="ColorRect/SeeCondition" to="." method="_on_SeeCondition_item_selected"]
+[connection signal="pressed" from="ColorRect/SeeCondition" to="ColorRect/SeeCondition" method="_on_TextureButton_pressed"]
+[connection signal="item_selected" from="ColorRect/ToDirectionChoose" to="." method="_on_ToDirectionChoose_item_selected"]
+[connection signal="pressed" from="ColorRect/ToDirectionChoose" to="ColorRect/ToDirectionChoose" method="_on_TextureButton_pressed"]
+[connection signal="pressed" from="Delete" to="." method="_on_Delete_pressed"]

@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/alexander-nakarada-adventure.mp3-a777318a4afdd3b55bde19d5a02ced4c.mp3str"
+
+[deps]
+
+source_file="res://music/alexander-nakarada-adventure.mp3"
+dest_files=[ "res://.import/alexander-nakarada-adventure.mp3-a777318a4afdd3b55bde19d5a02ced4c.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

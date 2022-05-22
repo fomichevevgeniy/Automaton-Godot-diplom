@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://AutomatonMode/Scripts/Interface/TileChoose.gd" type="Script" id=1]
+[ext_resource path="res://AutomatonMode/Resources/TileSets/AutomatonTileSet.tres" type="TileSet" id=2]
+
+[node name="TileChoose" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = -969.0
+margin_bottom = -540.0
+script = ExtResource( 1 )
+
+[node name="TileMap" type="TileMap" parent="."]
+position = Vector2( 11.6625, 48 )
+scale = Vector2( 0.971875, 1 )
+tile_set = ExtResource( 2 )
+cell_size = Vector2( 96, 96 )
+centered_textures = true
+format = 1
+tile_data = PoolIntArray( 0, 0, 0, 1, 1, 0, 2, 2, 0 )
+
+[connection signal="gui_input" from="." to="." method="_on_TileChoose_gui_input"]
+[connection signal="resized" from="." to="." method="_on_TileChoose_resized"]

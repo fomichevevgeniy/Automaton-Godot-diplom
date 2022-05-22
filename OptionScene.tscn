@@ -1,0 +1,134 @@
+[gd_scene load_steps=17 format=2]
+
+[ext_resource path="res://resources/scripts/BackTomainmenuButton.gd" type="Script" id=1]
+[ext_resource path="res://resources/images/MenuInterface/exitHover.png" type="Texture" id=2]
+[ext_resource path="res://resources/images/MenuInterface/exitPressed.png" type="Texture" id=3]
+[ext_resource path="res://resources/images/MenuInterface/exit.png" type="Texture" id=4]
+[ext_resource path="res://resources/fonts/Troubleside.ttf" type="DynamicFontData" id=5]
+[ext_resource path="res://resources/images/MenuInterface/checkbox-False.png" type="Texture" id=6]
+[ext_resource path="res://resources/images/MenuInterface/checkbox-True.png" type="Texture" id=7]
+[ext_resource path="res://TextureButton.gd" type="Script" id=8]
+[ext_resource path="res://resources/images/MenuInterface/icons/ru_lang.png" type="Texture" id=9]
+[ext_resource path="res://OptionScene.gd" type="Script" id=10]
+[ext_resource path="res://AutomatonMode/Scripts/Interface/TranslatableLabel.gd" type="Script" id=11]
+[ext_resource path="res://AutomatonMode/Resources/Scenes/PopupButton.gd" type="Script" id=12]
+[ext_resource path="res://resources/images/MenuInterface/icons/en_lang.png" type="Texture" id=14]
+[ext_resource path="res://AutomatonMode/Resources/Other/InputStyleBox.tres" type="StyleBox" id=15]
+
+[sub_resource type="DynamicFont" id=1]
+size = 32
+font_data = ExtResource( 5 )
+
+[sub_resource type="DynamicFont" id=2]
+font_data = ExtResource( 5 )
+
+[node name="Control" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+rect_pivot_offset = Vector2( -232.198, 138.588 )
+script = ExtResource( 10 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_right = 1280.0
+margin_bottom = 720.0
+color = Color( 0.196078, 0.196078, 0.196078, 1 )
+
+[node name="BackTomainmenuButton" type="TextureButton" parent="."]
+margin_left = 1130.0
+margin_top = 570.0
+margin_right = 1230.0
+margin_bottom = 670.0
+texture_normal = ExtResource( 4 )
+texture_pressed = ExtResource( 3 )
+texture_hover = ExtResource( 2 )
+expand = true
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="."]
+margin_left = 30.0
+margin_top = 44.0
+margin_right = 530.0
+margin_bottom = 94.0
+custom_fonts/font = SubResource( 1 )
+text = "ПОЛНОЭКРАННЫЙ РЕЖИМ"
+script = ExtResource( 11 )
+
+[node name="Label2" type="Label" parent="."]
+margin_left = 30.0
+margin_top = 131.0
+margin_right = 231.0
+margin_bottom = 181.0
+custom_fonts/font = SubResource( 1 )
+text = "ЯЗЫК"
+script = ExtResource( 11 )
+
+[node name="TextureButton" type="TextureButton" parent="."]
+margin_left = 514.951
+margin_top = 44.0
+margin_right = 614.951
+margin_bottom = 144.0
+rect_scale = Vector2( 0.5, 0.5 )
+toggle_mode = true
+shortcut_in_tooltip = false
+texture_normal = ExtResource( 6 )
+texture_pressed = ExtResource( 7 )
+script = ExtResource( 8 )
+
+[node name="LanguageChoose" type="TextureButton" parent="."]
+margin_left = 239.502
+margin_top = 135.858
+margin_right = 279.502
+margin_bottom = 175.858
+texture_normal = ExtResource( 9 )
+script = ExtResource( 12 )
+
+[node name="Language" type="PopupMenu" parent="LanguageChoose"]
+margin_left = -9.0
+margin_top = -3.0
+margin_right = 35.0
+margin_bottom = 86.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_styles/panel = ExtResource( 15 )
+items = [ "", ExtResource( 9 ), 0, false, false, 0, 0, null, "", false, "", ExtResource( 14 ), 0, false, false, 1, 0, null, "", false ]
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label3" type="Label" parent="."]
+margin_left = 23.0
+margin_top = 215.0
+margin_right = 1206.0
+margin_bottom = 605.0
+custom_fonts/font = SubResource( 2 )
+text = "Данный проект был выполнен в рамках дипломной работы студентом группы 
+М1-17 Фомичевым Евгением:
+
+Программное моделирование работы автоматов в лабиринтах. Реализация игрового режима.
+
+Отдельные благодарности Научному руководителю: Ушаковой Валентине
+Султанову Роману и Муродову Тимуру за предоставление основы для улучшения
+Николаю Юрьевичу Волкову за идею реализации научной программы в виде игры
+И идеи и советы во время разработки проекта
+
+This project was completed as part of a thesis work by a student of the group 
+M1-17 Fomichev Evgeny:
+
+Software simulation of automata in labyrinths.  Implementation of the game mode.
+
+Special thanks: Scientific supervisor: Ushakova Valentina
+Sultanov Roman and Murodov Timur for providing the basis for improvement
+Nikolai Yurievich Volkov for the idea of implementing a scientific program in the form of a game
+And ideas and advice during project development"
+
+[connection signal="button_up" from="BackTomainmenuButton" to="BackTomainmenuButton" method="_on_BackTomainmenuButton_button_up"]
+[connection signal="pressed" from="TextureButton" to="TextureButton" method="_on_TextureButton_pressed"]
+[connection signal="toggled" from="TextureButton" to="BackTomainmenuButton" method="_on_TextureButton_toggled"]
+[connection signal="item_selected" from="LanguageChoose" to="." method="_on_ToDirectionChoose_item_selected"]
+[connection signal="pressed" from="LanguageChoose" to="LanguageChoose" method="_on_TextureButton_pressed"]

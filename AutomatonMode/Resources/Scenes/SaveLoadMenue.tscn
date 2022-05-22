@@ -1,0 +1,113 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://resources/images/MenuInterface/icons/Button pressed.png" type="Texture" id=1]
+[ext_resource path="res://resources/images/MenuInterface/icons/Button.png" type="Texture" id=2]
+[ext_resource path="res://resources/fonts/a_gildiaexp.ttf" type="DynamicFontData" id=3]
+
+[sub_resource type="StyleBoxTexture" id=1]
+texture = ExtResource( 2 )
+region_rect = Rect2( 0, 0, 100, 40 )
+
+[sub_resource type="StyleBoxTexture" id=2]
+texture = ExtResource( 1 )
+region_rect = Rect2( 0, 0, 100, 40 )
+
+[sub_resource type="StyleBoxTexture" id=3]
+texture = ExtResource( 2 )
+region_rect = Rect2( 0, 0, 100, 40 )
+
+[sub_resource type="DynamicFont" id=4]
+font_data = ExtResource( 3 )
+
+[node name="SaveLoadMenue" type="Control"]
+anchor_right = 0.263
+anchor_bottom = 0.764
+margin_right = 0.359985
+margin_bottom = -0.0800171
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0.533333, 0.396078, 0.341176, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LoadSave" type="Button" parent="ColorRect"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 70.6229
+margin_top = 24.4597
+margin_right = -64.3771
+margin_bottom = -468.54
+custom_styles/hover = SubResource( 1 )
+custom_styles/pressed = SubResource( 2 )
+custom_styles/normal = SubResource( 3 )
+custom_fonts/font = SubResource( 4 )
+custom_colors/font_color = Color( 0.341176, 0.117647, 0.117647, 1 )
+custom_colors/font_color_hover = Color( 0.341176, 0.117647, 0.117647, 1 )
+custom_colors/font_color_pressed = Color( 0.184314, 0.0392157, 0.0392157, 1 )
+text = "Загрузить сохранение"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Save" type="Button" parent="ColorRect"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 70.6229
+margin_top = 114.46
+margin_right = -64.3771
+margin_bottom = -378.54
+custom_styles/hover = SubResource( 1 )
+custom_styles/pressed = SubResource( 2 )
+custom_styles/normal = SubResource( 3 )
+custom_fonts/font = SubResource( 4 )
+custom_colors/font_color = Color( 0.341176, 0.117647, 0.117647, 1 )
+custom_colors/font_color_hover = Color( 0.341176, 0.117647, 0.117647, 1 )
+custom_colors/font_color_pressed = Color( 0.184314, 0.0392157, 0.0392157, 1 )
+text = "Сохранить"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Continue" type="Button" parent="ColorRect"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 70.6229
+margin_top = 211.46
+margin_right = -64.3771
+margin_bottom = -281.54
+custom_styles/hover = SubResource( 1 )
+custom_styles/pressed = SubResource( 2 )
+custom_styles/normal = SubResource( 3 )
+custom_fonts/font = SubResource( 4 )
+custom_colors/font_color = Color( 0.341176, 0.117647, 0.117647, 1 )
+custom_colors/font_color_hover = Color( 0.341176, 0.117647, 0.117647, 1 )
+custom_colors/font_color_pressed = Color( 0.184314, 0.0392157, 0.0392157, 1 )
+text = "Продолжить"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Exit" type="Button" parent="ColorRect"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 70.6229
+margin_top = 303.46
+margin_right = -64.3771
+margin_bottom = -189.54
+custom_styles/hover = SubResource( 1 )
+custom_styles/pressed = SubResource( 2 )
+custom_styles/normal = SubResource( 3 )
+custom_fonts/font = SubResource( 4 )
+custom_colors/font_color = Color( 0.341176, 0.117647, 0.117647, 1 )
+custom_colors/font_color_hover = Color( 0.341176, 0.117647, 0.117647, 1 )
+custom_colors/font_color_pressed = Color( 0.184314, 0.0392157, 0.0392157, 1 )
+text = "Выйти"
+__meta__ = {
+"_edit_use_anchors_": false
+}
