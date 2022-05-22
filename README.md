@@ -1,4 +1,4 @@
-# GodotIntegerLineEdit
+# Readme
 INSTALLING
 
 1. Download Godot Engime from official site: 
